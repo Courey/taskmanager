@@ -1,4 +1,15 @@
 extends ../shared/template
 
 block content
-  h1= title
+	h1 To Do
+	h2 Register
+	form(method='post', action='/users/register')
+		input(type='email',name='email', placeholder='email@email.com', autofocus='true')
+		input(type='password', name='password', placeholder='password')
+		button Register
+	
+	h2 Login
+	form(method='post', action='/users/login')
+		input(type='email',name='email', placeholder='email@email.com', autofocus='true')
+		input(type='password', name='password', placeholder='password')
+		button Login

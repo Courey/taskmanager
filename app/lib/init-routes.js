@@ -15,8 +15,19 @@ module.exports = (req, res, next)=>{
 
 function load(app, fn){
   var home = traceur.require(__dirname + '/../routes/home.js');
+  var users = traceur.require(__dirname + '/../routes/users.js');
+  var tasks = traceur.require(__dirname + '/../routes/tasks.js');
+
 
   app.get('/', dbg, home.index);
+
+  app.post('/users/register', dbg, users.register);
+  app.get('/users/home', dbg, users.home);
+  app.post('/users/login', dbg, users.login);
+
+  app.put('/tasks/add', dbg, tasks.addNew);
+  app.delete('/tasks/delete/:id', dbg, tasks.delete);
+
   console.log('Routes Loaded');
   fn();
 }

@@ -42,7 +42,8 @@ class Task{
     }
 
     destroy(fn){
-      tasks.findAndRemove({_id: this._id}, ()=>{});
+      tasks.findAndRemove({_id: this._id});
+      fn();
     }// end destroy
 
     save(func){

@@ -1,0 +1,8 @@
+tr(style='background-color: #{task.color}')
+					td= task.title
+					td= task.due
+					td= task.isComplete
+					td 
+						form
+							input(type='hidden', name='taskId', value= task._id)
+							button.delete X
