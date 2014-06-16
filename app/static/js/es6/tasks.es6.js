@@ -26,7 +26,6 @@
 		var task = $(this).prev().val();
 		ajax(`/tasks/delete/${task}`, 'delete', null, ()=>{
 			var thing = $(this).closest('tr');
-			console.log(thing);
 			$(this).closest('tr').remove();
 		});
 		event.preventDefault();

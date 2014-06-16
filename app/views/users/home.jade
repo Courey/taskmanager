@@ -1,29 +1,4 @@
 extends ../shared/template
 
 block content
-	h1= user.email
-
-	form
-		input.title(placeholder='Task tile', autofocus=true)
-		input.date(type='date', placeholder='date due')
-		input.color(type='color')
-		button#submit Add Task
-
-	table#tasks
-		thead
-			th task
-			th due
-			th completed
-			th delete task
-		tbody
-			each task in tasks
-				tr(style='background-color: #{task.color}')
-					td= task.title
-					td= task.due
-					td= task.isComplete
-					td 
-						form
-							input(type='hidden', name='taskId', value= task._id)
-							button.delete X
-block scripts
-	script(src='/js/es6/compiled/tasks.js')
+  h1 Dashboard

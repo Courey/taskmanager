@@ -10,6 +10,7 @@ class Task{
       task.color = obj.color;
       task.isComplete = false;
       if(typeof id === 'string'){
+        if(id.length !== 24){func(null); return;}
         id = Mongo.ObjectID(id);
         task.userId = id;
       }else{
@@ -50,6 +51,7 @@ class Task{
       tasks.save(this, (err, count)=>{
         func();
       });
-    }
+    }// end save
+
 }//end class Task
 module.exports = Task;

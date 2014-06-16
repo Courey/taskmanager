@@ -24,6 +24,11 @@ function load(app, fn){
   app.post('/users/register', dbg, users.register);
   app.get('/users/home', dbg, users.home);
   app.post('/users/login', dbg, users.login);
+  app.get('/users/dashboard', dbg, users.dashboard);
+
+  app.all('*', users.bounce);
+
+  app.get('/test', dbg, users.testytest);
 
   app.put('/tasks/add', dbg, tasks.addNew);
   app.delete('/tasks/delete/:id', dbg, tasks.delete);
